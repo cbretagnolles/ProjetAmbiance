@@ -72,51 +72,40 @@ lastupdate=0
 
 def boucle_1s():
     global valeur_bouton
-#    global temps_maj_bouton
     global affichage
     global affichage_courant
     global buttonmaster
     global classement
     global lastupdate
     while True:
-        #print('-T0-')
         start_time = time.time()
         with data_lock:
             if button1.is_pressed:
                 valeur_bouton, affichage,affichage_courant = 1, 1, 1
-                print('You pushed 1')
                 affichagebouton1(rasp_master_id)
             elif button2.is_pressed:
                 valeur_bouton, affichage,affichage_courant = 2, 2, 2
-                print('You pushed 2')
                 affichagebouton2(rasp_master_id)
             elif button3.is_pressed:
                 valeur_bouton,affichage,affichage_courant  = 3, 3, 3
-                print('You pushed 3')
                 affichagebouton3(rasp_master_id)
             elif button4.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 4, 4, 4
-                print('You pushed 4')
                 affichagebouton4(rasp_master_id)
             elif button5.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 5, 5, 5
-                print('You pushed 5')
                 affichagebouton5(rasp_master_id)
             elif button6.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 6, 6, 6
-                print('You pushed 6')
                 affichagebouton6(rasp_master_id)
             elif button7.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 7, 7, 7
-                print('You pushed 7')
                 affichagebouton7(rasp_master_id)
             elif button8.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 8, 8, 8
-                print('You pushed 8')
                 affichagebouton8(rasp_master_id)
             elif button9.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 9, 9, 9
-                print('You pushed 9')
                 affichagebouton9(buttonmaster, classement, lastupdate)
             elif affichage != affichage_courant or ((buttonmaster!=rasp_master_id) and valeur_bouton==0):
                 affichage_courant = affichage
@@ -150,11 +139,9 @@ def boucle_60s():
     global Erreur_lecture
     while True:
         start_time = time.time()
-        print('-T2-')
         with data_lock:
             if valeur_bouton != 0:
                 try:
-                    print('envoi valeur en ligne + envoi classement')
                     sha, valeur_bouton_online, classement_online, buttonmaster_online, lastupdate_online = get_file_content()
                     if valeur_bouton_online != -1:
                         valeur_bouton_update = valeur_bouton
@@ -170,7 +157,6 @@ def boucle_60s():
                     valeur_bouton = 0
             else:
                 try:
-                    print('lecture valeur en ligne')
                     sha, valeur_bouton_online, classement_online, buttonmaster_online, lastupdate_online = get_file_content()
                     if valeur_bouton_online != -1:
                         affichage = valeur_bouton_online
@@ -248,7 +234,7 @@ def affichagebouton2(ButtonMaster):
 
 def affichagebouton3(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -273,7 +259,7 @@ def affichagebouton3(ButtonMaster):
         
 def affichagebouton4(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -298,7 +284,7 @@ def affichagebouton4(ButtonMaster):
 
 def affichagebouton5(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -323,7 +309,7 @@ def affichagebouton5(ButtonMaster):
 
 def affichagebouton6(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -350,7 +336,7 @@ def affichagebouton6(ButtonMaster):
 
 def affichagebouton7(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -377,7 +363,7 @@ def affichagebouton7(ButtonMaster):
 
 def affichagebouton8(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -404,7 +390,7 @@ def affichagebouton8(ButtonMaster):
 
 def affichagebouton9(buttonmaster, classement, lastupdate):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -498,7 +484,7 @@ def update_file_content(valeur_bouton_update,classement_update,buttonmaster_upda
     response = requests.put(url, headers=headers, data=json.dumps(data))
     
     if response.status_code == 200 or response.status_code == 201:
-        print('Fichier mis à jour avec succès.')
+        #print('Fichier mis à jour avec succès.')
     else:
         print('Erreur lors de la mise à jour du fichier:', response.status_code, response.json())
 
