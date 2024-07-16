@@ -162,7 +162,7 @@ def boucle_60s():
                         buttonmaster = buttonmaster_online
                         classement = classement_online
                         lastupdate = lastupdate_online
-                        #('maj classement')
+                        classement[buttonmaster]+=(time.time()-lastupdate)
                         valeur_bouton = 0
                 except Exception as e:
                     print('Erreur lecture')
