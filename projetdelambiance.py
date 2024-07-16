@@ -189,7 +189,7 @@ def affichagebouton1(ButtonMaster):
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
         #logging.info("init and Clear")
-        #epd.init()
+        epd.init()
         #epd.Clear()
         #font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
         #font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
