@@ -483,9 +483,7 @@ def update_file_content(valeur_bouton_update,classement_update,buttonmaster_upda
     }
     response = requests.put(url, headers=headers, data=json.dumps(data))
     
-    if response.status_code == 200 or response.status_code == 201:
-        #print('Fichier mis à jour avec succès.')
-    else:
+    if response.status_code != 200 and response.status_code != 201:
         print('Erreur lors de la mise à jour du fichier:', response.status_code, response.json())
 
 
