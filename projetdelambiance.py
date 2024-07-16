@@ -29,8 +29,7 @@ import json
 import time
 from projetdelambiance_functions import initparamgit
 # Remplacez ces valeurs par les vôtres
-GITHUB_TOKEN, REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH = initparamgit()
-rasp_master_id=0;#0=clément,1=antoine,2=samuel,3=hugo, 4=fail_wifi
+GITHUB_TOKEN, REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH,rasp_master_id = initparamgit()
 
 # Verrou pour synchroniser l'accès à la variable partagée
 data_lock = threading.Lock()
