@@ -28,7 +28,7 @@ import base64
 import json
 import time
 from projetdelambiance_functions import initparamgit
-
+print(fichier git V0)
 # Remplacez ces valeurs par les vôtres
 GITHUB_TOKEN, REPO_OWNER, REPO_NAME, FILE_PATH, BRANCH = initparamgit()
 rasp_master_id=0;#0=clément,1=antoine,2=samuel,3=hugo, 4=fail_wifi
