@@ -152,7 +152,7 @@ def boucle_60s():
                         update_file_content(valeur_bouton_update, classement_update, buttonmaster_update, lastupdate_update, sha)
                     valeur_bouton = 0
                 except Exception as e:
-                    print('Erreur envoi')
+                    #print('Erreur envoi')
                     valeur_bouton = 0
             else:
                 try:
@@ -165,7 +165,7 @@ def boucle_60s():
                         classement[buttonmaster]+=(time.time()-lastupdate)
                         valeur_bouton = 0
                 except Exception as e:
-                    print('Erreur lecture')
+                    #print('Erreur lecture')
                     buttonmaster = 4
         elapsed_time = time.time() - start_time
         time.sleep(max(0, 60 - elapsed_time))
@@ -184,7 +184,7 @@ def indices_liste_triee(lst):
     
 def affichagebouton1(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -203,11 +203,11 @@ def affichagebouton1(ButtonMaster):
         #logging.info("Goto Sleep...")
         epd.sleep()
     except IOError as e:
-        logging.info(e)
+         return None
 
 def affichagebouton2(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     try:
         #logging.info("epd7in5_V2 Demo")
         epd = epd7in5_V2.EPD()
@@ -228,7 +228,7 @@ def affichagebouton2(ButtonMaster):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
 
 
 def affichagebouton3(ButtonMaster):
@@ -254,7 +254,7 @@ def affichagebouton3(ButtonMaster):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
         
 def affichagebouton4(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
@@ -279,7 +279,7 @@ def affichagebouton4(ButtonMaster):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
 
 def affichagebouton5(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
@@ -304,7 +304,7 @@ def affichagebouton5(ButtonMaster):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
 
 def affichagebouton6(ButtonMaster):
     master=["Clément","Antoine","Hugo","Samuel","WIFI ERR"]
@@ -329,7 +329,7 @@ def affichagebouton6(ButtonMaster):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
         
 
 
@@ -356,7 +356,7 @@ def affichagebouton7(ButtonMaster):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
         
 
 
@@ -383,7 +383,7 @@ def affichagebouton8(ButtonMaster):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
         
 
 
@@ -416,7 +416,7 @@ def affichagebouton9(buttonmaster, classement, lastupdate):
         epd.sleep()
         
     except IOError as e:
-        logging.info(e)
+         return None
         
         
 
@@ -465,7 +465,7 @@ def  get_file_content():
             sha = content['sha']
             return sha,valeur_bouton_online,classement_online,buttonmaster_online,lastupdate_online
         else:
-            print('Erreur lors de la récupération du fichier:', response.status_code, response.json())
+            #print('Erreur lors de la récupération du fichier:', response.status_code, response.json())
             return sha,valeur_bouton_online,classement_online,buttonmaster_online,lastupdate_online
     except Exception as e:
         return sha,valeur_bouton_online,classement_online,buttonmaster_online,lastupdate_online
@@ -483,7 +483,7 @@ def update_file_content(valeur_bouton_update,classement_update,buttonmaster_upda
     response = requests.put(url, headers=headers, data=json.dumps(data))
     
     if response.status_code != 200 and response.status_code != 201:
-        print('Erreur lors de la mise à jour du fichier:', response.status_code, response.json())
+        return None
 
 
 
