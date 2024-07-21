@@ -291,7 +291,9 @@ def affichagebouton5(ButtonMaster):
         epd.init()
         #epd.Clear()
         #logging.info("read bmp file")
-        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/", 'image5.bmp'))
+        mois=time.time.now().month
+        nom_fichier=str(mois)+".bmp"
+        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/samuel/natalie", nom_fichier))
         draw = ImageDraw.Draw(Himage)
         font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
         draw.rectangle((10, 10, 110, 40), fill = 255)
