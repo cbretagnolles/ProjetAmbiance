@@ -1,5 +1,6 @@
 import threading
 import time
+import datetime
 from gpiozero import Button
 from gpiozero import OutputDevice
 import RPi.GPIO as GPIO
@@ -291,7 +292,7 @@ def affichagebouton5(ButtonMaster):
         epd.init()
         #epd.Clear()
         #logging.info("read bmp file")
-        mois=time.time.now().month
+        mois = datetime.datetime.now().month
         nom_fichier=str(mois)+".bmp"
         Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/samuel/natalie", nom_fichier))
         draw = ImageDraw.Draw(Himage)
