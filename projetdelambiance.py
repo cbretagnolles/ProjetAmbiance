@@ -216,7 +216,9 @@ def affichagebouton2(ButtonMaster):
         epd.init()
         #epd.Clear()
         #logging.info("read bmp file")
-        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/", 'image2.bmp'))
+        jour = datetime.datetime.now().day
+        nom_fichier="antoine_shooting_"+str(int(jour))+".bmp"
+        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/antoine/shooting/", nom_fichier))
         draw = ImageDraw.Draw(Himage)
         font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
         draw.rectangle((10, 10, 110, 40), fill = 255)
@@ -242,6 +244,10 @@ def affichagebouton3(ButtonMaster):
         epd.init()
         #epd.Clear()
         #logging.info("read bmp file")
+        jour = datetime.datetime.now().day
+        nom_fichier="antoine_amsterdam_"+str(int(jour))+".bmp"
+        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/antoine/amsterdam/", nom_fichier))
+       
         Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/", 'image3.bmp'))
         draw = ImageDraw.Draw(Himage)
         font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
