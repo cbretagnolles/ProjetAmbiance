@@ -326,7 +326,7 @@ def affichagebouton6(ButtonMaster):
         #epd.Clear()
         #logging.info("read bmp file")
         jour = datetime.datetime.now().day
-        nom_fichier=str(int(jour%4))+".bmp"
+        nom_fichier=str(int(jour%4)+1)+".bmp"
         Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/samuel/famille/", nom_fichier))
         draw = ImageDraw.Draw(Himage)
         font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
@@ -354,7 +354,9 @@ def affichagebouton7(ButtonMaster):
         epd.init()
         #epd.Clear()
         #logging.info("read bmp file")
-        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/", 'image7.bmp'))
+        jour = datetime.datetime.now().day
+        nom_fichier="clement_chat_"+str(int(jour%7)+1)+".bmp"
+        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/clement/chat/", nom_fichier))
         draw = ImageDraw.Draw(Himage)
         font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
         draw.rectangle((10, 10, 110, 40), fill = 255)
@@ -381,7 +383,9 @@ def affichagebouton8(ButtonMaster):
         epd.init()
         #epd.Clear()
         #logging.info("read bmp file")
-        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/", 'image8.bmp'))
+        mois = datetime.datetime.now().month
+        nom_fichier=str(int(mois))+".bmp"
+        Himage = Image.open(os.path.join("/home/pi/UnifiedDisplay/ProjetAmbiance/clement/fruits/", nom_fichier))
         draw = ImageDraw.Draw(Himage)
         font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
         draw.rectangle((10, 10, 110, 40), fill = 255)
