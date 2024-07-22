@@ -84,39 +84,39 @@ def boucle_1s():
         with data_lock:
             if button1.is_pressed:
                 valeur_bouton, affichage,affichage_courant = 1, 1, 1
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton1(rasp_master_id)
             elif button2.is_pressed:
                 valeur_bouton, affichage,affichage_courant = 2, 2, 2
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton2(rasp_master_id)
             elif button3.is_pressed:
                 valeur_bouton,affichage,affichage_courant  = 3, 3, 3
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton3(rasp_master_id)
             elif button4.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 4, 4, 4
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton4(rasp_master_id)
             elif button5.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 5, 5, 5
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton5(rasp_master_id)
             elif button6.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 6, 6, 6
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton6(rasp_master_id)
             elif button7.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 7, 7, 7
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton7(rasp_master_id)
             elif button8.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 8, 8, 8
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton8(rasp_master_id)
             elif button9.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 9, 9, 9
-                buttonmaster_courant=rasp_master_id
+                buttonmaster_courant,buttonmaster=rasp_master_id
                 affichagebouton9(rasp_master_id, classement, lastupdate)
             elif affichage != affichage_courant or (buttonmaster_courant!=buttonmaster and valeur_bouton==0):
                 affichage_courant = affichage
