@@ -64,7 +64,7 @@ valeur_bouton = 0
 affichage = 0
 affichage_courant = 9
 classement = [0, 0, 0, 0]
-valeur_bouton=0
+valeur_bouton=9
 affichage=9
 affichage_courant=9
 buttonmaster=rasp_master_id
@@ -116,8 +116,9 @@ def boucle_1s():
                 affichagebouton8(rasp_master_id)
             elif button9.is_pressed:
                 valeur_bouton,affichage,affichage_courant = 9, 9, 9
-                affichagebouton9(buttonmaster, classement, lastupdate)
-            elif affichage != affichage_courant or ((buttonmaster_courant!=buttonmaster) and valeur_bouton==0):
+                buttonmaster_courant=rasp_master_id
+                affichagebouton9(rasp_master_id, classement, lastupdate)
+            elif affichage != affichage_courant or (buttonmaster_courant!=buttonmaster and valeur_bouton==0):
                 affichage_courant = affichage
                 buttonmaster_courant=buttonmaster
                 if affichage == 1:
