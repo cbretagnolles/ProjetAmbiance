@@ -155,7 +155,7 @@ def boucle_60s():
             if valeur_bouton != 0:
                 try:
                     sha, valeur_bouton_online, classement_online, buttonmaster_online, lastupdate_online = get_file_content()
-                    if valeur_bouton_online != -1:
+                    if valeur_bouton_online != -1 && time.time()>lastupdate_online:
                         valeur_bouton_update = valeur_bouton
                         buttonmaster_update = rasp_master_id # ##a completer  #0=clement, 1=antoine, 2=samuel, 3=hugo
                         classement = classement_online
