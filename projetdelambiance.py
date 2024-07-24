@@ -438,7 +438,7 @@ def affichagebouton9(buttonmaster, classement, lastupdate):
         current_datetime = datetime.fromtimestamp(current_timestamp)
         # Formater la date et l'heure
         formatted_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
-        draw.text((486, 40), formatted_datetime, font = font24, fill = 0
+        draw.text((486, 40), str(formatted_datetime), font = font24, fill = 0
         indice_classement = indices_liste_triee(classement)
         draw.text((204, 30), master[indice_classement[3]]+" : \n"+str(int(classement[indice_classement[3]]/86400))+"j "+str(int(((classement[indice_classement[3]]/86400)-math.floor(classement[indice_classement[3]]/86400))*24))+"h "+str(int(((classement[indice_classement[3]]/3600)-math.floor(classement[indice_classement[3]]/3600))*60))+"min\nGAFAM du\nbouton", font = font18, fill = 0)
         draw.text((21, 105), master[indice_classement[2]]+" : \n"+str(int(classement[indice_classement[2]]/86400))+"j "+str(int(((classement[indice_classement[2]]/86400)-math.floor(classement[indice_classement[2]]/86400))*24))+"h "+str(int(((classement[indice_classement[2]]/3600)-math.floor(classement[indice_classement[2]]/3600))*60))+"min\nJeune licorne\ndu NASDAQ", font = font18, fill = 0)
