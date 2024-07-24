@@ -441,7 +441,7 @@ def affichagebouton9(buttonmaster, classement, lastupdate):
         draw.text((486, 55), str(formatted_datetime), font = font24, fill = 0)
         jeutotal=int(classement[0])+int(classement[1])+int(classement[2])+int(classement[3])
         draw.text((486, 10), "temps de jeu:"+str(int(jeutotal/86400))+"j "+str(int(((jeutotal/86400)-math.floor(jeutotal/86400))*24))+"h "+str(int(((jeutotal/3600)-math.floor(jeutotal/3600))*60))+"min", font = font18, fill = 0)
-        draw.text((486, 30), "dérive totale:"+str(int(math.floor((time.time()-jeutotal)-(172185506-252300))))+"s", font = font18, fill = 0)
+        draw.text((486, 30), "dérive totale:"+str(int(math.floor((time.time()-jeutotal)-(1721600056-252300))))+"s", font = font18, fill = 0)
         indice_classement = indices_liste_triee(classement)
         draw.text((204, 30), master[indice_classement[3]]+" : \n"+str(int(classement[indice_classement[3]]/86400))+"j "+str(int(((classement[indice_classement[3]]/86400)-math.floor(classement[indice_classement[3]]/86400))*24))+"h "+str(int(((classement[indice_classement[3]]/3600)-math.floor(classement[indice_classement[3]]/3600))*60))+"min\nGAFAM du\nbouton", font = font18, fill = 0)
         draw.text((21, 105), master[indice_classement[2]]+" : \n"+str(int(classement[indice_classement[2]]/86400))+"j "+str(int(((classement[indice_classement[2]]/86400)-math.floor(classement[indice_classement[2]]/86400))*24))+"h "+str(int(((classement[indice_classement[2]]/3600)-math.floor(classement[indice_classement[2]]/3600))*60))+"min\nJeune licorne\ndu NASDAQ", font = font18, fill = 0)
