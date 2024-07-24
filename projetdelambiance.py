@@ -435,7 +435,7 @@ def affichagebouton9(buttonmaster, classement, lastupdate):
         draw.text((10, 40), "Unified V0.2", font = font24, fill = 0)
         current_timestamp = time.time()
         # Convertir le timestamp en objet datetime
-        current_datetime = datetime.fromtimestamp(current_timestamp)
+        current_datetime = datetime.datetime.fromtimestamp(current_timestamp)
         # Formater la date et l'heure
         formatted_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
         draw.text((486, 40), str(formatted_datetime), font = font24, fill = 0)
