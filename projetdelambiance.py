@@ -432,7 +432,7 @@ def affichagebouton9(buttonmaster, classement, lastupdate):
         font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
         draw.rectangle((10, 10, 110, 40), fill = 255)
         draw.text((10, 10), master[buttonmaster], font = font24, fill = 0)
-        draw.text((10, 40), "Unified V0.2", font = font24, fill = 0
+        draw.text((10, 40), "Unified V0.2", font = font24, fill = 0)
         current_timestamp = time.time()
         # Convertir le timestamp en objet datetime
         current_datetime = datetime.fromtimestamp(current_timestamp)
